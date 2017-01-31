@@ -43,6 +43,6 @@ var nay = baydin.numFormat(152)//တစ်ရာငါးဆယ်နှစ်
 ### Example Code
 ```
 var baydin = require('baydin');
-var nay = baydin.tatyout(152)//တစ်ရာငါးဆယ်နှစ်
+var nay = baydin.tatyout(1,1)//1
 ```
 
