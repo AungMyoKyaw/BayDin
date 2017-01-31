@@ -1,4 +1,6 @@
-# BayDinJS
+# BayDinJS [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/AungMyoKyaw/BayDin/issues)
+
+[![NPM](https://nodei.co/npm/baydin.png)](https://nodei.co/npm/baydin/)
 ```
 npm install --save baydin
 ```
