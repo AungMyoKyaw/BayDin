@@ -1,6 +1,6 @@
 function nayNum(str) {
-    // to filter consonant
-    var consonant = /[က-အ](?!်|္)/g;//thanks to ko camhill(mysteryzillion.org) for this regex.
+    // to filter vowel
+    var vowel = /[က-အ](?!်|္)/g;//thanks to ko camhill(mysteryzillion.org) for this regex.
     function setRex(i) {
         var s1 = /[အ]/;
         var s2 = /[က-င]/;
@@ -26,7 +26,7 @@ function nayNum(str) {
                 return s7;
         }
     }
-    var str = str.match(consonant);
+    var str = str.match(vowel);
     var ans = "";
     str.forEach(function(a) {
         var test = false;
@@ -45,7 +45,7 @@ function nayNum(str) {
             }
         }
     });
-    return ans;
+    return Number(ans);
 };
 
 module.exports = nayNum;
