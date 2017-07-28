@@ -1,11 +1,18 @@
-# BayDinJS [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/AungMyoKyaw/BayDin/issues)[![NSP Status](https://nodesecurity.io/orgs/aung-myo-kyaw/projects/83ceca4c-ac5b-4062-b388-324a0b75b135/badge)](https://nodesecurity.io/orgs/aung-myo-kyaw/projects/83ceca4c-ac5b-4062-b388-324a0b75b135)
+# BayDinJS
+> Myanmar Astrology
 
-[![NPM](https://nodei.co/npm/baydin.png)](https://nodei.co/npm/baydin/)
-```
+[![Build Status][travis]][travis-url]
+[![npm][npm-download]][npm-dl-url]
+[![contributions welcome][contri]][contri-url]
+[![NSP Status][nsp]][nsp-url]
+
+## Installation
+```shell
 npm install --save baydin
 ```
+
 ## Test
-```
+```shell
 npm test
 ```
 
@@ -20,7 +27,7 @@ npm test
 ပုတိ ၊ ဘင်္ဂ ၊ မရဏ ၊ အထွန်း ၊ သိုက် ၊ ရာဇာ ၊ အဓိပတိ ဆိုတဲ့ အဖွား ခုနှစ်ခု ကိုတွက်ထုတ်ပေးမှာဖြစ်ပါတယ်။ ခုနှစ် သက္ကရာဇ်ရယ် မွေးနံ ရယ်ကို ထည့်သွင်းဖို့ လိုအပ်ပါတယ်။
 
 ### Example Code
-```
+```javascript
 var baydin = require('baydin');
 var mahb = baydin.maharbote(1356,1)//မရဏ
 ```
@@ -29,7 +36,7 @@ var mahb = baydin.maharbote(1356,1)//မရဏ
 ထည့်သွင်းလိုက်တဲ့ စာသားကို နေ့သင့်နံသင်ဂဏန်းအဖြစ်ပြောင်းမှာဖြစ်ပါတယ်။ ဥပမာ-nayNum("မင်းဖြူမှန်မှန်ပြော")//55555
 
 ### Example Code
-```
+```javascript
 var baydin = require('baydin');
 var nay = baydin.nayNum("မင်းဖြူမှန်မှန်ပြော")//55555
 ```
@@ -38,7 +45,7 @@ var nay = baydin.nayNum("မင်းဖြူမှန်မှန်ပြေ�
 ၁ ဂဏန်း သမား ၂ ဂဏန်း သမား ၉ ဂဏန်းသမား ဆိုပြီးတော့ အမျိုးအစား ၉ မျိုး ရှိပါတယ်။ တွက်နည်းက မွေးရက် ကို တစ်လုံးတည်းရအောင် ပေါင်းရမှာပါ။ ဥပမာ-၁၁ ဆိုရင် ၂ ဂဏန်းသမားဖြစ်ပါတယ်
 
 ### Example Code
-```
+```javascript
 var baydin = require('baydin');
 var numero = baydin.numerology(11)//2
 ```
@@ -47,7 +54,7 @@ var numero = baydin.numerology(11)//2
 ထည့်သွင်းလိုက်တဲ့ ကိန်းဂဏန်းကို စာသားအနေနဲ့ ပြန်ထုတ်ပေးမှာဖြစ်ပါတယ်။ ဥပမာ-numFormat(152)//တစ်ရာငါးဆယ်နှစ်
 
 ### Example Code
-```
+```javascript
 var baydin = require('baydin');
 var numF = baydin.numFormat(152)//တစ်ရာငါးဆယ်နှစ်
 ```
@@ -56,7 +63,19 @@ var numF = baydin.numFormat(152)//တစ်ရာငါးဆယ်နှစ်
 အသက် နဲ့ နေ့နံ ကို ထည့်သွင်းလိုက်မယ် ဆိုရင် သက်ရောက်ကို တွက်ထုတ်ပေးပါတယ်။ စနေ့အတွက် ကိုတော့ သုည မဟုတ်ပဲ 7 ကိုပဲထည့်သွင်းပေးစေလိုပါတယ်။ ဥပမာ-သက်ရောက်(1,1)//1 လို့ တွက်ထုတ်ပေးပါတယ်။
 
 ### Example Code
-```
+```javascript
 var baydin = require('baydin');
 var ty = baydin.tatyout(1,1)//1
 ```
+
+## License
+[MIT](./LICENSE)
+
+[contri]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
+[contri-url]: https://github.com/AungMyoKyaw/BayDin/issues
+[nsp]: https://nodesecurity.io/orgs/aung-myo-kyaw/projects/83ceca4c-ac5b-4062-b388-324a0b75b135/badge
+[nsp-url]: https://nodesecurity.io/orgs/aung-myo-kyaw/projects/83ceca4c-ac5b-4062-b388-324a0b75b135
+[travis]: https://travis-ci.org/AungMyoKyaw/BayDin.svg?branch=master
+[travis-url]: https://travis-ci.org/AungMyoKyaw/BayDin
+[npm-download]: https://img.shields.io/npm/dt/baydin.svg
+[npm-dl-url]: https://www.npmjs.com/package/baydin
