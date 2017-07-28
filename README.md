@@ -17,11 +17,11 @@ npm test
 ```
 
 ## Function List
-- maharbote
-- nayNum
-- numerology
-- numFormat
-- tatyout
+- [maharbote](#maharbote)
+- [nayNum](#nayNum)
+- [numerology](#numerology)
+- [numFormat](#numFormat)
+- [tatyout](#tatyout)
 
 ## maharbote
 ပုတိ ၊ ဘင်္ဂ ၊ မရဏ ၊ အထွန်း ၊ သိုက် ၊ ရာဇာ ၊ အဓိပတိ ဆိုတဲ့ အဖွား ခုနှစ်ခု ကိုတွက်ထုတ်ပေးမှာဖြစ်ပါတယ်။ ခုနှစ် သက္ကရာဇ်ရယ် မွေးနံ ရယ်ကို ထည့်သွင်းဖို့ လိုအပ်ပါတယ်။
