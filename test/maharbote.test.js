@@ -1,9 +1,9 @@
-const expect = require('chai').expect;
-const maharbote = require('../baydinjs/maharbote');
+var expect = require('chai').expect;
+var maharbote = require('../baydinjs/maharbote');
 
 describe('maharbote',()=>{
 	it('should equal to မရဏ',()=>{
-		let result=maharbote(1356,1);
+		var result=maharbote(1356,1);
 		expect(result).to.equal('မရဏ');
 	});
 });
