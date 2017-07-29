@@ -7,8 +7,13 @@
 [![NSP Status][nsp]][nsp-url]
 
 ## Installation
+### via npm
 ```shell
 npm install --save baydin
+```
+### via web
+```html
+<script src="https://unpkg.com/baydin@latest/dist/client/baydin.min.js"></script>
 ```
 
 ## Test
