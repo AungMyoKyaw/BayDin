@@ -14,10 +14,13 @@
   "author": "Aung Myo Kyaw",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-mocha": "^4.3.1"
+    "gulp-mocha": "^4.3.1",
+    "webpack": "^3.4.1"
   }
 }

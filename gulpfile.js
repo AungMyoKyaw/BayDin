@@ -1,8 +1,21 @@
 var gulp = require('gulp');
+var webpack = require('webpack');
+var config = require('./webpack.config')
 var babel = require('gulp-babel');
 var mocha = require('gulp-mocha');
 
-gulp.task('transpile',function(){
+gulp.task('client',function(){
+	return webpack(config)
+		.run(function(err,stats){
+			if(err){
+				console.log(err);
+			} else {
+				console.log(stats.toString())
+			}
+		})
+})
+
+gulp.task('node',function(){
 	return gulp.src('baydinjs/**')
 		.pipe(babel({
 			presets:['env']
@@ -21,4 +34,4 @@ gulp.task('test',function(){
 		})
 })
 
-gulp.task('default',['transpile','test'])
+gulp.task('default',['node','client','test'])
