@@ -2,9 +2,10 @@
   "name": "baydin",
   "version": "0.1.2",
   "description": "Bay Din JS",
-  "main": "index.js",
+  "main": "dist/node/baydin.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "gulp test",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,10 @@
   "author": "Aung Myo Kyaw",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-env": "^1.6.0",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-mocha": "^4.3.1"
   }
 }
