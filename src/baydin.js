@@ -5,9 +5,9 @@ var numFormat = require('./lib/numFormat');
 var tatyout = require('./lib/tatyout');
 
 module.exports = {
-	maharbote,
-	nayNum,
-	numerology,
-	numFormat,
-	tatyout
-}
+  maharbote,
+  nayNum,
+  numerology,
+  numFormat,
+  tatyout
+};
