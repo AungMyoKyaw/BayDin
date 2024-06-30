@@ -2,7 +2,6 @@
 
 > Myanmar Astrology
 
-[![Build Status][travis]][travis-url]
 [![code style: prettier][prettier]][prettier-url]
 [![npm][npm-download]][npm-dl-url]
 [![contributions welcome][contri]][contri-url]
@@ -43,7 +42,7 @@ npm test
 ### Example Code
 
 ```javascript
-var baydin = require('baydin');
+var baydin = require("baydin");
 var mahb = baydin.maharbote(1356, 1); //မရဏ
 ```
 
@@ -54,8 +53,8 @@ var mahb = baydin.maharbote(1356, 1); //မရဏ
 ### Example Code
 
 ```javascript
-var baydin = require('baydin');
-var nay = baydin.nayNum('မင်းဖြူမှန်မှန်ပြော'); //55555
+var baydin = require("baydin");
+var nay = baydin.nayNum("မင်းဖြူမှန်မှန်ပြော"); //55555
 ```
 
 ## numerology
@@ -65,7 +64,7 @@ var nay = baydin.nayNum('မင်းဖြူမှန်မှန်ပြေ�
 ### Example Code
 
 ```javascript
-var baydin = require('baydin');
+var baydin = require("baydin");
 var numero = baydin.numerology(11); //2
 ```
 
@@ -76,7 +75,7 @@ var numero = baydin.numerology(11); //2
 ### Example Code
 
 ```javascript
-var baydin = require('baydin');
+var baydin = require("baydin");
 var numF = baydin.numFormat(152); //တစ်ရာငါးဆယ်နှစ်
 ```
 
@@ -87,7 +86,7 @@ var numF = baydin.numFormat(152); //တစ်ရာငါးဆယ်နှစ�
 ### Example Code
 
 ```javascript
-var baydin = require('baydin');
+var baydin = require("baydin");
 var ty = baydin.tatyout(1, 1); //1
 ```
 
@@ -97,8 +96,6 @@ MIT © [Aung Myo Kyaw](https://github.com/AungMyoKyaw)
 
 [contri]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square
 [contri-url]: https://github.com/AungMyoKyaw/BayDin/issues
-[travis]: https://img.shields.io/travis/AungMyoKyaw/BayDin/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/AungMyoKyaw/BayDin
 [npm-download]: https://img.shields.io/npm/dt/baydin.svg?style=flat-square
 [npm-dl-url]: https://www.npmjs.com/package/baydin
 [license]: https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square

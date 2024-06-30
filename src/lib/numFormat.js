@@ -1,17 +1,17 @@
 function numFormat(num) {
   var value = [
-    'တစ်',
-    'နှစ်',
-    'သုံး',
-    'လေး',
-    'ငါး',
-    'ခြောက်',
-    'ခုနှစ်',
-    'ရှစ်',
-    'ကိုး'
+    "တစ်",
+    "နှစ်",
+    "သုံး",
+    "လေး",
+    "ငါး",
+    "ခြောက်",
+    "ခုနှစ်",
+    "ရှစ်",
+    "ကိုး"
   ];
-  var format = ['ကုဋေ', 'သန်း', 'သိန်း', 'သောင်း', 'ထောင်', 'ရာ', 'ဆယ်', ''];
-  var ans = '';
+  var format = ["ကုဋေ", "သန်း", "သိန်း", "သောင်း", "ထောင်", "ရာ", "ဆယ်", ""];
+  var ans = "";
   var numlength = num.toString().length;
   // console.log(numlength);
   if (numlength > 7) {
@@ -28,12 +28,12 @@ function numFormat(num) {
     ans += formatter(num);
   }
   function formatter(num) {
-    var ans = '';
+    var ans = "";
     if (num.toString().length)
       num
         .toString()
-        .split('')
-        .forEach(function(element, index, arr) {
+        .split("")
+        .forEach(function (element, index, arr) {
           if (Number(element) !== 0) {
             ans += value[element - 1] + format[8 + index - arr.length];
           }

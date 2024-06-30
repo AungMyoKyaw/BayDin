@@ -1,40 +1,30 @@
-var gulp = require('gulp');
-var webpack = require('webpack');
-var config = require('./webpack.config');
-var babel = require('gulp-babel');
-var mocha = require('gulp-mocha');
+const gulp = require("gulp");
+const babel = require("gulp-babel");
+const mocha = require("gulp-mocha");
+const webpack = require("webpack-stream");
+const path = require("path");
+const webpackConfig = require("./webpack.config.js");
 
-gulp.task('client', function() {
-  return webpack(config).run(function(err, stats) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(stats.toString());
-    }
-  });
-});
-
-gulp.task('node', function() {
-  return gulp
-    .src('baydinjs/**')
+gulp.task("build-node", () =>
+  gulp
+    .src("src/**/*.js")
     .pipe(
       babel({
-        presets: ['env']
+        presets: ["@babel/preset-env"]
       })
     )
-    .pipe(gulp.dest('dist/node'));
-});
+    .pipe(gulp.dest("dist/node"))
+);
 
-gulp.task('test', function() {
-  return gulp
-    .src('test/**')
-    .pipe(mocha())
-    .once('error', function() {
-      process.exit(1);
-    })
-    .once('end', function() {
-      process.exit();
-    });
-});
+gulp.task("build-browser", () =>
+  gulp
+    .src("src/**/*.js")
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest("dist/client"))
+);
 
-gulp.task('default', ['node', 'client', 'test']);
+gulp.task("test", () => gulp.src("test/**/*.js").pipe(mocha()));
+
+gulp.task("build", gulp.parallel("build-node", "build-browser"));
+
+gulp.task("default", gulp.series("build", "test"));

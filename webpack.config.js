@@ -1,32 +1,30 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require("path");
 
-var config = {
+module.exports = {
   entry: {
-    baydin: './src/baydin.js'
+    baydin: "./src/baydin.js"
   },
   output: {
-    path: path.resolve(__dirname, 'dist/client'),
-    filename: '[name].min.js',
-    library: 'baydin',
-    libraryTarget: 'window'
+    path: path.resolve(__dirname, "dist/client"),
+    filename: "[name].min.js",
+    library: "baydin",
+    libraryTarget: "umd"
   },
-  target: 'web',
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['env']
+            presets: ["@babel/preset-env"]
           }
         }
       }
     ]
   },
-  plugins: [new webpack.optimize.UglifyJsPlugin()]
+  resolve: {
+    extensions: [".js"]
+  }
 };
-
-module.exports = config;

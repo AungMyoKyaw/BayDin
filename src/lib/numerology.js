@@ -3,11 +3,11 @@ function numberbaydin(num) {
   function numsplitreduce(a, b) {
     return Number(a) + Number(b);
   }
-  var numsplit = num.toString().split('');
+  var numsplit = num.toString().split("");
   var sum = numsplit.reduce(numsplitreduce);
   //console.log(sum);
   while (sum > 9) {
-    numsplit = sum.toString().split('');
+    numsplit = sum.toString().split("");
     sum = numsplit.reduce(numsplitreduce);
   }
   //console.log(sum);

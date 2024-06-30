@@ -27,8 +27,8 @@ function nayNum(str) {
     }
   }
   var str = str.match(vowel);
-  var ans = '';
-  str.forEach(function(a) {
+  var ans = "";
+  str.forEach(function (a) {
     var test = false;
     var i = 1;
     while (test === false) {
