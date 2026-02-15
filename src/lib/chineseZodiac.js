@@ -1,4 +1,22 @@
-// Function to get the Chinese Zodiac sign for a given year
+/**
+ * Gets the Chinese zodiac sign for a given year.
+ *
+ * The Chinese zodiac is a repeating 12-year cycle where each year
+ * is represented by an animal. This function calculates the zodiac
+ * sign based on the Gregorian calendar year.
+ *
+ * @param {number} year - Gregorian calendar year (positive integer)
+ * @returns {Object} Object containing zodiac information
+ * @returns {string} returns.sign - Zodiac sign name in English
+ * @returns {string} returns.signInBurmese - Zodiac sign name in Burmese
+ * @throws {Error} If year is not a valid positive integer
+ * @example
+ * chineseZodiac(2024);
+ * // { sign: "Dragon", signInBurmese: "နဂါး" }
+ *
+ * chineseZodiac(1990);
+ * // { sign: "Horse", signInBurmese: "မြင်း" }
+ */
 function getChineseZodiac(year) {
   // Validate the input
   if (typeof year !== "number" || !Number.isInteger(year) || year <= 0) {
@@ -6,7 +24,7 @@ function getChineseZodiac(year) {
   }
 
   // Array of Chinese Zodiac signs in the order they repeat
-  const zodiacSigns = [
+  var zodiacSigns = [
     "Rat",
     "Ox",
     "Tiger",
@@ -21,7 +39,7 @@ function getChineseZodiac(year) {
     "Pig"
   ];
 
-  const zodiacSignsInBurmese = [
+  var zodiacSignsInBurmese = [
     "ကြွက်",
     "နွား",
     "ကျား",
@@ -37,7 +55,7 @@ function getChineseZodiac(year) {
   ];
 
   // Calculate the index for the zodiac sign
-  const index = (year - 4) % 12;
+  var index = ((year - 4) % 12 + 12) % 12; // Handle negative modulo
 
   // Return the corresponding zodiac sign
   return {

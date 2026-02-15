@@ -1,41 +1,60 @@
+/**
+ * Converts Myanmar text to its numerological equivalent (nay num).
+ *
+ * This function extracts consonants from Myanmar text and converts them
+ * to their corresponding numerological values based on traditional
+ * Myanmar astrology.
+ *
+ * @param {string} str - Myanmar text string
+ * @returns {number} The numerological number
+ * @throws {Error} If input is not a string or is empty
+ * @example
+ * nayNum("မင်းဖြူမှန်မှန်ပြော"); // 55555
+ */
 function nayNum(str) {
-  // to filter vowel
-  var vowel = /[က-အ](?!်|္)/g; //thanks to ko camhill(mysteryzillion.org) for this regex.
-  function setRex(i) {
-    var s1 = /[အ]/;
-    var s2 = /[က-င]/;
-    var s3 = /[စ-ည]/;
-    var s4 = /[ယ-ဝ]/;
-    var s5 = /[ပ-မ]/;
-    var s6 = /[သဟ]/;
-    var s7 = /[တ-န]/;
-    switch (i) {
-      case 1:
-        return s1;
-      case 2:
-        return s2;
-      case 3:
-        return s3;
-      case 4:
-        return s4;
-      case 5:
-        return s5;
-      case 6:
-        return s6;
-      case 7:
-        return s7;
-    }
+  // Validate input
+  if (typeof str !== "string") {
+    throw new Error("Input must be a string");
   }
-  var str = str.match(vowel);
+  if (str.length === 0) {
+    throw new Error("Input string cannot be empty");
+  }
+
+  // Regex to filter vowel characters in Myanmar script
+  var vowel = /[က-အ](?!်|္)/g;
+
+  /**
+   * Returns a regex pattern for the given numerological group
+   * @param {number} i - Group number (1-7)
+   * @returns {RegExp} Regex pattern for the group
+   */
+  function setRex(i) {
+    var patterns = {
+      1: /[အ]/,
+      2: /[က-င]/,
+      3: /[စ-ည]/,
+      4: /[ယ-ဝ]/,
+      5: /[ပ-မ]/,
+      6: /[သဟ]/,
+      7: /[တ-န]/
+    };
+    return patterns[i];
+  }
+
+  var matchedChars = str.match(vowel);
+  if (!matchedChars || matchedChars.length === 0) {
+    return 0;
+  }
+
   var ans = "";
-  str.forEach(function (a) {
+  matchedChars.forEach(function (a) {
     var test = false;
     var i = 1;
-    while (test === false) {
+    while (test === false && i <= 7) {
       var patt = setRex(i);
       if (patt.test(a) === true) {
         test = true;
-        if (i == 7) {
+        if (i === 7) {
           ans += 0;
         } else {
           ans += i;
