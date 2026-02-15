@@ -1,8 +1,21 @@
 /**
- * Function to calculate the Zodiac sign based on birth date and month.
- * @param {number} day - The day of the birth.
- * @param {number} month - The month of the birth.
- * @returns {string} - The Zodiac sign.
+ * Gets the Western zodiac sign based on birth date.
+ *
+ * This function determines the zodiac sign based on the day and month
+ * of birth, following the tropical zodiac system used in Western astrology.
+ *
+ * @param {number} day - Day of birth (1-31)
+ * @param {number} month - Month of birth (1-12)
+ * @returns {Object} Object containing zodiac information
+ * @returns {string} returns.sign - Zodiac sign name in English
+ * @returns {string} returns.sign_mm - Zodiac sign name in Myanmar
+ * @throws {Error} If invalid date or month input
+ * @example
+ * zodiac(15, 3);
+ * // { sign: "Pisces", sign_mm: "မိန်" }
+ *
+ * zodiac(25, 12);
+ * // { sign: "Capricorn", sign_mm: "မကာရ" }
  */
 function getZodiacSign(day, month) {
   // Validate input
@@ -17,8 +30,14 @@ function getZodiacSign(day, month) {
     throw new Error("Invalid date or month input");
   }
 
+  // Additional validation for days in month
+  var daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if (day > daysInMonth[month - 1]) {
+    throw new Error("Invalid day for the given month");
+  }
+
   // Array of zodiac signs and their date ranges
-  const zodiacSigns = [
+  var zodiacSigns = [
     {
       sign: "Capricorn",
       sign_mm: "မကာရ",
@@ -100,7 +119,8 @@ function getZodiacSign(day, month) {
   ];
 
   // Determine zodiac sign based on date and month
-  for (const zodiac of zodiacSigns) {
+  for (var i = 0; i < zodiacSigns.length; i++) {
+    var zodiac = zodiacSigns[i];
     if (
       (month === zodiac.start.month && day >= zodiac.start.day) ||
       (month === zodiac.end.month && day <= zodiac.end.day)

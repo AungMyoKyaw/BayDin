@@ -1,4 +1,9 @@
-const path = require("path");
+/**
+ * @fileoverview Webpack configuration for BayDinJS browser bundle
+ * @description Configures the build for browser-compatible minified output
+ */
+
+var path = require("path");
 
 module.exports = {
   entry: {
